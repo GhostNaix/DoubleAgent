@@ -15,6 +15,11 @@ DoubleAgent exploits a 15 years old legitimate feature of Windows and therefore 
 DoubleAgent gives the attacker the ability to inject any DLL into any process. The code injection occurs extremely early during the victim’s process boot, giving the attacker full control over the process and no way for the process to protect itself.
 The code injection technique is so unique that it’s not detected or blocked by any antivirus.
 
+## Changes from the main branch/dev
+* Functional on Windows 7 x86/x64
+* Possible compatiblity with other version such as (Windows xp/vista) by hooking other functions
+* Allows usage of libaries functions from other .dlls in the process
+
 ## Persistency
 
 DoubleAgent can continue injecting code even after reboot making it a perfect persistence technique to “survive” reboots/updates/reinstalls/patches/etc.
@@ -50,6 +55,11 @@ For more details, checkout our [technical](http://cybellum.com/doubleagentzero-d
    Note that the 32bit installer (DoubleAgent_x86.exe) can be used both on Windows x86 and Windows x64.
    But the 64bit installer (DoubleAgent_x64.exe) can be used only on Windows x64.
 5. The next time the target process loads [DoubleAgentDll.dll](https://github.com/Cybellum/DoubleAgent/tree/master/DoubleAgentDll) would be injected into it.
+6. (Optional) if impatient manually restart process
 
 ## Authors
 Cybellum Technologies LTD (http://cybellum.com/)
+A bit of modification from me
+
+## Special Thanks
+* Tsuda Kageyu for [minhook](https://github.com/TsudaKageyu/minhook) without this it would not be possible
